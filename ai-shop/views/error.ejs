@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطا - فروشگاه خدمات هوش مصنوعی</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">🎨 AI Shop</a>
+            <ul class="nav-links">
+                <li><a href="/">خانه</a></li>
+                <li><a href="/products">محصولات</a></li>
+                <li><a href="/about">درباره ما</a></li>
+                <li><a href="/contact">تماس با ما</a></li>
+                <li>
+                    <a href="/cart" class="cart-icon">
+                        🛒 سبد خرید
+                        <% if (typeof cartCount !== 'undefined' && cartCount > 0) { %>
+                            <span class="cart-count"><%= cartCount %></span>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="font-size: 5rem; margin-bottom: 1rem;">❌</div>
+            <h1 style="color: #ef4444; margin-bottom: 1rem;">خطا</h1>
+            <p style="color: #6b7280; font-size: 1.1rem; margin-bottom: 2rem;">
+                <%= message || 'متأسفانه خطایی رخ داده است' %>
+            </p>
+            <a href="/" class="btn btn-primary">بازگشت به خانه</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره فروشگاه</h3>
+                <p>فروشگاه خدمات هوش مصنوعی، ارائه‌دهنده پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/products">محصولات</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/contact">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات ما</h3>
+                <ul>
+                    <li><a href="/products?category=photo-editing">ویرایش عکس</a></li>
+                    <li><a href="/products?category=portrait">پرتره حرفه‌ای</a></li>
+                    <li><a href="/products?category=beauty">زیبایی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>📧 info@aishop.ir</p>
+                <p>📱 021-12345678</p>
+                <p>📍 تهران، ایران</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 1403 فروشگاه خدمات هوش مصنوعی. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>

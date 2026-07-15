@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفارش با موفقیت ثبت شد - فروشگاه خدمات هوش مصنوعی</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">🎨 AI Shop</a>
+            <ul class="nav-links">
+                <li><a href="/">خانه</a></li>
+                <li><a href="/products">محصولات</a></li>
+                <li><a href="/about">درباره ما</a></li>
+                <li><a href="/contact">تماس با ما</a></li>
+                <li>
+                    <a href="/cart" class="cart-icon">
+                        🛒 سبد خرید
+                        <% if (typeof cartCount !== 'undefined' && cartCount > 0) { %>
+                            <span class="cart-count"><%= cartCount %></span>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="font-size: 5rem; margin-bottom: 1rem;">✅</div>
+            <h1 style="color: #10b981; margin-bottom: 1rem;">سفارش شما با موفقیت ثبت شد!</h1>
+            <p style="color: #6b7280; font-size: 1.1rem; margin-bottom: 2rem;">
+                از خرید شما سپاسگزاریم
+            </p>
+
+            <div style="background: #f9fafb; padding: 2rem; border-radius: 10px; margin: 2rem 0; text-align: right;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary-color);">اطلاعات سفارش</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <strong>شماره سفارش:</strong>
+                        <div style="color: #6b7280;"><%= order.id %></div>
+                    </div>
+                    <div>
+                        <strong>نام مشتری:</strong>
+                        <div style="color: #6b7280;"><%= order.customer.name %></div>
+                    </div>
+                    <div>
+                        <strong>ایمیل:</strong>
+                        <div style="color: #6b7280;"><%= order.customer.email %></div>
+                    </div>
+                    <div>
+                        <strong>تلفن:</strong>
+                        <div style="color: #6b7280;"><%= order.customer.phone %></div>
+                    </div>
+                    <div>
+                        <strong>مبلغ کل:</strong>
+                        <div style="color: var(--primary-color); font-weight: bold;"><%= order.total.toLocaleString() %> تومان</div>
+                    </div>
+                    <div>
+                        <strong>تاریخ ثبت:</strong>
+                        <div style="color: #6b7280;"><%= new Date(order.date).toLocaleDateString('fa-IR') %></div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+                    <strong>آدرس:</strong>
+                    <div style="color: #6b7280; margin-top: 0.5rem;"><%= order.customer.address %></div>
+                </div>
+            </div>
+
+            <div style="background: #fef3c7; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; border: 1px solid #f59e0b; text-align: right;">
+                <h3 style="color: #92400e; margin-bottom: 0.5rem;">📌 مراحل بعدی</h3>
+                <ol style="color: #78350f; line-height: 2;">
+                    <li>لینک آپلود عکس‌های شما به ایمیل و شماره تماس ارسال خواهد شد</li>
+                    <li>پس از آپلود عکس، پردازش توسط هوش مصنوعی شروع می‌شود</li>
+                    <li>نتیجه نهایی حداکثر طی ۴۸ ساعت آماده می‌شود</li>
+                    <li>فایل نهایی از طریق ایمیل برای شما ارسال می‌گردد</li>
+                </ol>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="/products" class="btn">خرید مجدد</a>
+                <a href="/" class="btn btn-primary">بازگشت به خانه</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره فروشگاه</h3>
+                <p>فروشگاه خدمات هوش مصنوعی، ارائه‌دهنده پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/products">محصولات</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/contact">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات ما</h3>
+                <ul>
+                    <li><a href="/products?category=photo-editing">ویرایش عکس</a></li>
+                    <li><a href="/products?category=portrait">پرتره حرفه‌ای</a></li>
+                    <li><a href="/products?category=beauty">زیبایی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>📧 info@aishop.ir</p>
+                <p>📱 021-12345678</p>
+                <p>📍 تهران، ایران</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 1403 فروشگاه خدمات هوش مصنوعی. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>
