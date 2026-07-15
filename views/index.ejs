@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خانه - فروشگاه خدمات هوش مصنوعی</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">🎨 AI Shop</a>
+            <ul class="nav-links">
+                <li><a href="/">خانه</a></li>
+                <li><a href="/products">محصولات</a></li>
+                <li><a href="/about">درباره ما</a></li>
+                <li><a href="/contact">تماس با ما</a></li>
+                <li>
+                    <a href="/cart" class="cart-icon">
+                        🛒 سبد خرید
+                        <% if (typeof cartCount !== 'undefined' && cartCount > 0) { %>
+                            <span class="cart-count"><%= cartCount %></span>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>به فروشگاه خدمات هوش مصنوعی خوش آمدید</h1>
+        <p>پیشرفته‌ترین سرویس‌های ویرایش عکس با تکنولوژی هوش مصنوعی</p>
+        <a href="/products" class="btn">مشاهده محصولات</a>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align: center; margin: 3rem 0 2rem;">محصولات ویژه</h2>
+        <div class="products-grid">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <div class="product-image">
+                        🖼️
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name"><%= product.name %></h3>
+                        <p class="product-description"><%= product.description %></p>
+                        <div class="product-price"><%= product.price.toLocaleString() %> تومان</div>
+                        <div class="product-actions">
+                            <form action="/cart/add" method="POST" style="flex: 1;">
+                                <input type="hidden" name="productId" value="<%= product.id %>">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">افزودن به سبد</button>
+                            </form>
+                            <a href="/product/<%= product.id %>" class="btn" style="background: #e5e7eb;">جزئیات</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/products" class="btn btn-primary">مشاهده همه محصولات</a>
+        </div>
+
+        <div style="margin: 4rem 0;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">چرا ما؟</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 style="margin-bottom: 1rem;">سرعت بالا</h3>
+                    <p>دریافت نتایج در کمترین زمان ممکن</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="margin-bottom: 1rem;">دقت عالی</h3>
+                    <p>استفاده از پیشرفته‌ترین الگوریتم‌های هوش مصنوعی</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                    <h3 style="margin-bottom: 1rem;">امنیت کامل</h3>
+                    <p>حفظ حریم خصوصی و امنیت تصاویر شما</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💳</div>
+                    <h3 style="margin-bottom: 1rem;">پرداخت آسان</h3>
+                    <p>امکان پرداخت آنلاین امن و سریع</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره فروشگاه</h3>
+                <p>فروشگاه خدمات هوش مصنوعی، ارائه‌دهنده پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/products">محصولات</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/contact">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات ما</h3>
+                <ul>
+                    <li><a href="/products?category=photo-editing">ویرایش عکس</a></li>
+                    <li><a href="/products?category=portrait">پرتره حرفه‌ای</a></li>
+                    <li><a href="/products?category=beauty">زیبایی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>📧 info@aishop.ir</p>
+                <p>📱 021-12345678</p>
+                <p>📍 تهران، ایران</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 1403 فروشگاه خدمات هوش مصنوعی. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>

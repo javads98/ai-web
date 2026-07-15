@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما - فروشگاه خدمات هوش مصنوعی</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">🎨 AI Shop</a>
+            <ul class="nav-links">
+                <li><a href="/">خانه</a></li>
+                <li><a href="/products">محصولات</a></li>
+                <li><a href="/about">درباره ما</a></li>
+                <li><a href="/contact">تماس با ما</a></li>
+                <li>
+                    <a href="/cart" class="cart-icon">
+                        🛒 سبد خرید
+                        <% if (typeof cartCount !== 'undefined' && cartCount > 0) { %>
+                            <span class="cart-count"><%= cartCount %></span>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="margin-bottom: 2rem; text-align: center;">درباره ما</h1>
+
+        <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">داستان ما</h2>
+            <p style="line-height: 2; color: #4b5563; margin-bottom: 1rem;">
+                فروشگاه خدمات هوش مصنوعی در سال ۱۴۰۲ با هدف ارائه پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی تأسیس شد.
+            </p>
+            <p style="line-height: 2; color: #4b5563; margin-bottom: 1rem;">
+                ما با بهره‌گیری از آخرین الگوریتم‌های یادگیری عمیق و شبکه‌های عصبی، امکان تبدیل عکس‌های معمولی به تصاویر حرفه‌ای را برای همه فراهم کرده‌ایم.
+            </p>
+            <p style="line-height: 2; color: #4b5563;">
+                تیم متخصص ما متشکل از مهندسان هوش مصنوعی، طراحان گرافیک و متخصصان پردازش تصویر است که همواره در تلاشند تا بهترین تجربه را برای مشتریان خود فراهم کنند.
+            </p>
+        </div>
+
+        <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">خدمات ما</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="padding: 1.5rem; background: #f9fafb; border-radius: 10px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🖼️</div>
+                    <h3 style="margin-bottom: 0.5rem;">ویرایش عکس</h3>
+                    <p style="color: #6b7280;">تغییرات مختلف در عکس‌های شخصی با بالاترین کیفیت</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-radius: 10px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">👤</div>
+                    <h3 style="margin-bottom: 0.5rem;">پرتره حرفه‌ای</h3>
+                    <p style="color: #6b7280;">تبدیل عکس‌های معمولی به پرتره‌های استودیویی</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-radius: 10px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✨</div>
+                    <h3 style="margin-bottom: 0.5rem;">زیبایی</h3>
+                    <p style="color: #6b7280;">خدمات جوانسازی و بهبود ظاهر چهره</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-radius: 10px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎭</div>
+                    <h3 style="margin-bottom: 0.5rem;">تغییر خلاقانه</h3>
+                    <p style="color: #6b7280;">ایجاد تغییرات خلاقانه و سرگرم‌کننده در عکس‌ها</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">چرا ما را انتخاب کنید؟</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">✅</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">کیفیت بالا</h3>
+                        <p style="color: #6b7280;">استفاده از پیشرفته‌ترین الگوریتم‌های هوش مصنوعی</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">⚡</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">سرعت عالی</h3>
+                        <p style="color: #6b7280;">پردازش سریع و تحویل به موقع سفارشات</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🔒</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">امنیت کامل</h3>
+                        <p style="color: #6b7280;">حفظ حریم خصوصی و حذف عکس‌ها پس از پردازش</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">💬</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">پشتیبانی ۲۴/۷</h3>
+                        <p style="color: #6b7280;">پاسخگویی در تمام ساعات شبانه‌روز</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">💰</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">قیمت مناسب</h3>
+                        <p style="color: #6b7280;">تعرفه‌های رقابتی و منصفانه</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: start; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🔄</span>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">ضمانت رضایت</h3>
+                        <p style="color: #6b7280;">امکان ویرایش مجدد در صورت عدم رضایت</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره فروشگاه</h3>
+                <p>فروشگاه خدمات هوش مصنوعی، ارائه‌دهنده پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/products">محصولات</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/contact">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات ما</h3>
+                <ul>
+                    <li><a href="/products?category=photo-editing">ویرایش عکس</a></li>
+                    <li><a href="/products?category=portrait">پرتره حرفه‌ای</a></li>
+                    <li><a href="/products?category=beauty">زیبایی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>📧 info@aishop.ir</p>
+                <p>📱 021-12345678</p>
+                <p>📍 تهران، ایران</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 1403 فروشگاه خدمات هوش مصنوعی. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>
