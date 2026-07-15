@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبد خرید - فروشگاه خدمات هوش مصنوعی</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">🎨 AI Shop</a>
+            <ul class="nav-links">
+                <li><a href="/">خانه</a></li>
+                <li><a href="/products">محصولات</a></li>
+                <li><a href="/about">درباره ما</a></li>
+                <li><a href="/contact">تماس با ما</a></li>
+                <li>
+                    <a href="/cart" class="cart-icon">
+                        🛒 سبد خرید
+                        <% if (typeof cartCount !== 'undefined' && cartCount > 0) { %>
+                            <span class="cart-count"><%= cartCount %></span>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="margin-bottom: 2rem;">سبد خرید شما</h1>
+
+        <% if (cartItems.length === 0) { %>
+            <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 15px;">
+                <div style="font-size: 5rem; margin-bottom: 1rem;">🛒</div>
+                <h2 style="margin-bottom: 1rem;">سبد خرید شما خالی است</h2>
+                <p style="color: #6b7280; margin-bottom: 2rem;">برای شروع خرید به صفحه محصولات بروید</p>
+                <a href="/products" class="btn btn-primary">مشاهده محصولات</a>
+            </div>
+        <% } else { %>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>محصول</th>
+                        <th>قیمت واحد</th>
+                        <th>تعداد</th>
+                        <th>جمع کل</th>
+                        <th>عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cartItems.forEach(item => { %>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <span style="font-size: 2rem;">🖼️</span>
+                                    <div>
+                                        <strong><%= item.name %></strong>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><%= item.price.toLocaleString() %> تومان</td>
+                            <td>
+                                <form action="/cart/update/<%= item.id %>" method="POST" style="display: inline;">
+                                    <input type="number" name="quantity" value="<%= item.quantity %>" min="1" max="10" 
+                                           class="form-control" style="width: 80px; padding: 0.5rem;" onchange="this.form.submit()">
+                                </form>
+                            </td>
+                            <td><%= (item.price * item.quantity).toLocaleString() %> تومان</td>
+                            <td>
+                                <form action="/cart/remove/<%= item.id %>" method="POST" style="display: inline;">
+                                    <button type="submit" class="btn" style="background: #fee2e2; color: #dc2626; padding: 0.5rem 1rem;">
+                                        حذف
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            <div class="cart-total">
+                جمع کل: <%= total.toLocaleString() %> تومان
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+                <a href="/products" class="btn">ادامه خرید</a>
+                <a href="/checkout" class="btn btn-primary">نهایی کردن خرید</a>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره فروشگاه</h3>
+                <p>فروشگاه خدمات هوش مصنوعی، ارائه‌دهنده پیشرفته‌ترین سرویس‌های ویرایش عکس با استفاده از تکنولوژی هوش مصنوعی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="/">خانه</a></li>
+                    <li><a href="/products">محصولات</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/contact">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات ما</h3>
+                <ul>
+                    <li><a href="/products?category=photo-editing">ویرایش عکس</a></li>
+                    <li><a href="/products?category=portrait">پرتره حرفه‌ای</a></li>
+                    <li><a href="/products?category=beauty">زیبایی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>📧 info@aishop.ir</p>
+                <p>📱 021-12345678</p>
+                <p>📍 تهران، ایران</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 1403 فروشگاه خدمات هوش مصنوعی. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>
